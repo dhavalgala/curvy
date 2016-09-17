@@ -1,0 +1,26 @@
+<ion-menu [content]="content">
+
+  <ion-toolbar class="menu-toolbar">
+    <div class="avatar-main">
+      <div class="avatar">
+        <img src="img/mcfly.jpg">
+      </div>
+      <div class="avatar-info">
+        <h5>Marty McFly</h5>
+        <p>View Profile</p>
+      </div>
+    </div>
+  </ion-toolbar>
+
+  <ion-content>
+    <ion-list no-lines inset>
+      <button ion-item *ngFor="let p of pages" [ngClass]="{'active':p.active}" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>
+        <span>{{p.title}}</span>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

@@ -1,0 +1,61 @@
+.pd10 {
+  padding: 10px;
+}
+
+.login-curve {
+  margin-bottom: 50px;
+  padding: 25px 25px 40px;
+  border-radius: 0 0 50% 50%;
+  background-color: $secondary-color;
+  min-height: 125px;
+}
+
+.custom-input.item-input.input-has-focus {
+  .item-inner {
+    border-bottom-color: $secondary-color;
+    box-shadow: inset 0 -1px 0 0 $secondary-color;
+  }
+}
+
+.custom-input.input-has-focus {
+  ion-label[stacked] {
+    color: $secondary-color;
+  }
+  ion-label[floating] {
+    color: $secondary-color;
+  }
+}
+
+ion-list.login-form {
+  .item {
+    .item-inner {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+}
+
+.custom-input.item-input {
+  ion-label {
+    color: $primary-color;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.forgot {
+  margin: 2px;
+  color: $secondary-color;
+  cursor: pointer;
+}
+
+.sign-up {
+  text-align: center;
+  margin-top: 2px;
+  color: $primary-color;
+  a {
+    color: $secondary-color;
+    cursor: pointer;
+  }
+}
