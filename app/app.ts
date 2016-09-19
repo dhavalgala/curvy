@@ -1,9 +1,11 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav } from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
+import {BlogPage} from './pages/blog/blog';
 import {ListPage} from './pages/list/list';
 import {LoginPage} from './pages/login/login';
+import {SignupPage} from './pages/signup/signup';
+import {UserProfilePage} from './pages/user-profile/user-profile';
 
 
 @Component({
@@ -12,7 +14,7 @@ import {LoginPage} from './pages/login/login';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
+  // make BlogPage the root (or first) page
   rootPage: any = LoginPage;
   pages: Array<{ title: string, component: any, icon: string, active: boolean }>;
 
@@ -24,10 +26,11 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Blog', component: HelloIonicPage, icon: "logo-wordpress", active: true },
-      { title: 'Gallery', component: HelloIonicPage, icon: "photos", active: false },
-      { title: 'About', component: HelloIonicPage, icon: "information-circle", active: false },
-      { title: 'Contact', component: ListPage, icon: "contact", active: false }
+      { title: 'Blog', component: BlogPage, icon: "logo-wordpress", active: true },
+      { title: 'Gallery', component: BlogPage, icon: "photos", active: false },
+      { title: 'About', component: BlogPage, icon: "information-circle", active: false },
+      { title: 'Contact', component: ListPage, icon: "contact", active: false },
+      { title: 'Logout', component: LoginPage, icon: "exit", active: false }
     ];
   }
 
@@ -52,6 +55,11 @@ class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+
+  toProfile() {
+    this.menu.close();
+    this.nav.push(UserProfilePage);
   }
 }
 

@@ -4,9 +4,11 @@
 // These are the imports which make up the design of this app.
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
-@import "../pages/hello-ionic/hello-ionic";
+@import "../pages/blog/blog";
 @import "../pages/item-details/item-details";
 @import "../pages/login/login";
+@import "../pages/signup/signup";
+@import "../pages/user-profile/user-profile";
 
 .menu-toolbar {
   padding: 0;

@@ -1,15 +1,15 @@
 import {Component} from '@angular/core';
-import { LoadingController } from 'ionic-angular';
+import {LoadingController, NavController} from 'ionic-angular';
 import {BlogService} from '../../services/blog-service';
 import {TimeAgo} from '../../directives/timeago';
 
 @Component({
-  templateUrl: 'build/pages/hello-ionic/hello-ionic.html',
+  templateUrl: 'build/pages/blog/blog.html',
   providers: [BlogService],
   directives: [TimeAgo]
 })
-export class HelloIonicPage {
-  constructor(private blogService: BlogService, private loadingCtrl: LoadingController) {
+export class BlogPage {
+  constructor(private blogService: BlogService, private loadingCtrl: LoadingController, private nav: NavController) {
   	this.getLatestBlogs();
   }
   private cardList=new Array(5);
