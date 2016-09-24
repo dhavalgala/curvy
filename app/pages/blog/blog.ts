@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {LoadingController, NavController} from 'ionic-angular';
 import {BlogService} from '../../services/blog-service';
 import {TimeAgo} from '../../directives/timeago';
+import {BlogDetailsPage} from '../blog-details/blog-details';
 
 @Component({
   templateUrl: 'build/pages/blog/blog.html',
@@ -22,7 +23,7 @@ export class BlogPage {
 
     // Show the popup
     loadingPopup.present();
-        this.blogService.getFreshlyPressed().subscribe(
+    this.blogService.getFreshlyPressed().subscribe(
             data => {
                 this.latestBlogs = data.posts; 
                 console.log(data);
@@ -42,4 +43,10 @@ export class BlogPage {
     	let x = new Date(blogDate);
     	return x;
     }
+
+    toDetail(blog) {
+    this.nav.push(BlogDetailsPage, {
+      blogId: blog.ID
+    });
+  }
 }

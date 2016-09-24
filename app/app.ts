@@ -15,7 +15,7 @@ class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make BlogPage the root (or first) page
-  rootPage: any = LoginPage;
+  rootPage: any = BlogPage;
   pages: Array<{ title: string, component: any, icon: string, active: boolean }>;
 
   constructor(

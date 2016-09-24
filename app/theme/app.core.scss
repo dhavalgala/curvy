@@ -5,11 +5,10 @@
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
 @import "../pages/blog/blog";
-@import "../pages/item-details/item-details";
+@import "../pages/blog-details/blog-details";
 @import "../pages/login/login";
 @import "../pages/signup/signup";
 @import "../pages/user-profile/user-profile";
-
 .menu-toolbar {
   padding: 0;
   .toolbar-background {
@@ -81,6 +80,35 @@
   }
 }
 
+.loading-wrapper {
+  background: $primary-color;
+  .loading-spinner {
+    .spinner-crescent {
+      circle {
+        stroke: $secondary-color;
+      }
+    }
+    .spinner-ios {
+      line {
+        stroke: $secondary-color;
+      }
+    }
+    .spinner-ios-small {
+      line {
+        stroke: $secondary-color;
+      }
+    }
+    .spinner-circles {
+      circle {
+        fill: $secondary-color;
+      }
+    }
+  }
+  .loading-content {
+    color: $secondary-color;
+  }
+}
+
 .primary-color {
   color: $primary-color;
 }
@@ -98,19 +126,19 @@
 }
 
 @font-face {
-    font-family: 'JosefinSans-Regular';
-    src: url('../fonts/JosefinSans-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} 
+  font-family: 'JosefinSans-Regular';
+  src: url('../fonts/JosefinSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'JosefinSans-SemiBold';
-    src: url('../fonts/JosefinSans-SemiBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} 
+  font-family: 'JosefinSans-SemiBold';
+  src: url('../fonts/JosefinSans-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-*{
+* {
   font-family: 'JosefinSans-SemiBold';
 }

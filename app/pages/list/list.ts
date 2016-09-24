@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {ItemDetailsPage} from '../item-details/item-details';
+import {BlogDetailsPage} from '../blog-details/blog-details';
 
 
 @Component({
@@ -29,7 +29,7 @@ export class ListPage {
   }
 
   itemTapped(event, item) {
-    this.nav.push(ItemDetailsPage, {
+    this.nav.push(BlogDetailsPage, {
       item: item
     });
   }
