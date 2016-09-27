@@ -5,5 +5,23 @@
 </ion-header>
 
 <ion-content>
-  <div [innerHTML]="blogDetail.content" *ngIf="blogDetail"></div>
+  <div class="blog-detail animated fadeInUp" *ngIf="blogDetail.ID">
+    <div class="login-curve pic-holder mb0">
+      <div class="author-detail">
+        <img class="author-pic" src="{{blogDetail.author.avatar_URL}}" alt="">
+        <h5 class="author-name">{{blogDetail.author.name}}</h5>
+      </div>
+    </div>
+
+    <ion-card>
+      <ion-card-content class="pd0">
+        <p class="blog-date">{{blogDetail.date | date:'MMM d, y h:mm a'}}</p>
+        <div class="blog-detail-title">
+          <span [innerHTML]="blogDetail.title"></span>
+        </div>
+        <img src="{{blogDetail.featured_image}}" *ngIf="blogDetail.featured_image">
+        <div class="blog-desc" [innerHTML]="blogDetail.content"></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

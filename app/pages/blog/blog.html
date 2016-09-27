@@ -10,7 +10,7 @@
 
 <ion-content>
 
-  <ion-card class="animated fadeInDown" *ngFor="let blog of latestBlogs;let i=index;">
+  <ion-card *ngFor="let blog of latestBlogs;let i=index;">
     <div class="animated fadeInLeft" *ngIf="i%2==0" (click)="toDetail(blog);">
       <ion-item>
         <ion-avatar item-left>
