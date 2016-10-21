@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Gallery</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50 (click)="toDetail(1)">
+                <div class="image-holder">
+                    <img src="img/food/pizza.jpg" alt="">
+                    <div class="gallery-type">
+                        <span>Food</span>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col width-50 (click)="toDetail(2)">
+                <div class="image-holder">
+                    <img src="img/nature/nature1.jpg" alt="">
+                    <div class="gallery-type">
+                        <span>Nature</span>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-50 (click)="toDetail(3)">
+                <div class="image-holder">
+                    <img src="img/travel/travel1.jpg" alt="">
+                    <div class="gallery-type">
+                        <span>Travel</span>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col width-50 (click)="toDetail(4)">
+                <div class="image-holder">
+                    <img src="img/fashion/fashion3.jpg" alt="">
+                    <div class="gallery-type">
+                        <span>Fashion</span>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,15 @@
+.gallery-detail {
+  .mb0 {
+    margin-bottom: 0;
+  }
+  .gallery-name-holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .gallery-name {
+      margin: 2px 0;
+    }
+  }
+}

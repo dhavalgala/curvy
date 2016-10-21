@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {LoadingController, NavController, NavParams} from 'ionic-angular';
+import {DomSanitizationService} from '@angular/platform-browser';
 import {BlogService} from '../../services/blog-service';
 
 
@@ -10,7 +11,7 @@ import {BlogService} from '../../services/blog-service';
 export class BlogDetailsPage {
   private blogDetail = {};
 
-  constructor(private nav: NavController, navParams: NavParams, private blogService: BlogService, private loadingCtrl: LoadingController) {
+  constructor(private nav: NavController, navParams: NavParams, private blogService: BlogService, private loadingCtrl: LoadingController, private _sanitizer: DomSanitizationService) {
     // If we navigated to this page, we will have an item available as a nav param
     let blogId = navParams.get('blogId');
     this.getBlogDetail(blogId);
@@ -25,7 +26,9 @@ export class BlogDetailsPage {
     loadingPopup.present();
     this.blogService.getBlogDetail(blogId).subscribe(
             data => {
-                this.blogDetail = data; 
+                this.blogDetail = data;
+                this.blogDetail["title"] = this._sanitizer.bypassSecurityTrustHtml(this.blogDetail["title"]);
+                this.blogDetail["content"] = this._sanitizer.bypassSecurityTrustHtml(this.blogDetail["content"]);
                 console.log(data);
                 loadingPopup.dismiss();
             },

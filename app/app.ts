@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav } from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {BlogPage} from './pages/blog/blog';
-import {ListPage} from './pages/list/list';
+import {GalleryPage} from './pages/gallery/gallery';
 import {LoginPage} from './pages/login/login';
 import {SignupPage} from './pages/signup/signup';
 import {UserProfilePage} from './pages/user-profile/user-profile';
@@ -15,7 +15,7 @@ class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make BlogPage the root (or first) page
-  rootPage: any = BlogPage;
+  rootPage: any = GalleryPage;
   pages: Array<{ title: string, component: any, icon: string, active: boolean }>;
 
   constructor(
@@ -27,9 +27,9 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Blog', component: BlogPage, icon: "logo-wordpress", active: true },
-      { title: 'Gallery', component: BlogPage, icon: "photos", active: false },
+      { title: 'Gallery', component: GalleryPage, icon: "photos", active: false },
       { title: 'About', component: BlogPage, icon: "information-circle", active: false },
-      { title: 'Contact', component: ListPage, icon: "contact", active: false },
+      { title: 'Contact', component: GalleryPage, icon: "contact", active: false },
       { title: 'Logout', component: LoginPage, icon: "exit", active: false }
     ];
   }
