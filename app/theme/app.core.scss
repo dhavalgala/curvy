@@ -127,6 +127,11 @@
   background-color: $secondary-color;
 }
 
+.img-responsive{
+  width: 100% !important;
+  height: auto;
+}
+
 @font-face {
   font-family: 'JosefinSans-Regular';
   src: url('../fonts/JosefinSans-Regular.ttf') format('truetype');

@@ -8,19 +8,17 @@
   <div class="gallery-detail animated fadeInUp">
     <div class="login-curve pic-holder mb0">
       <div class="gallery-name-holder">
-        <h5 class="gallery-name">{{galleryName}}</h5>
+        <h4 class="gallery-name">{{galleryName}}</h4>
       </div>
     </div>
-
-    <!-- <ion-card>
-      <ion-card-content class="pd0">
-        <p class="blog-date">{{blogDetail.date | date:'MMM d, y h:mm a'}}</p>
-        <div class="blog-detail-title">
-          <span [innerHTML]="blogDetail.title"></span>
-        </div>
-        <img src="{{blogDetail.featured_image}}" *ngIf="blogDetail.featured_image">
-        <div class="blog-desc" [innerHTML]="blogDetail.content"></div>
-      </ion-card-content>
-    </ion-card> -->
+    <ion-grid *ngIf="galleryImages.length>0;">
+        <ion-row *ngFor="let items of galleryImages;let i=index;">
+            <ion-col width-50 *ngFor="let item of items;let j=index;">
+                <div class="image-holder" (click)="viewInSlide(i,j);">
+                    <img [src]="item" class="img-responsive">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
