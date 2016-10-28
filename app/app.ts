@@ -6,7 +6,8 @@ import {GalleryPage} from './pages/gallery/gallery';
 import {LoginPage} from './pages/login/login';
 import {SignupPage} from './pages/signup/signup';
 import {UserProfilePage} from './pages/user-profile/user-profile';
-
+import {AboutPage} from './pages/about/about';
+import {ContactPage} from './pages/contact/contact';
 
 @Component({
   templateUrl: 'build/app.html'
@@ -15,7 +16,7 @@ class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make BlogPage the root (or first) page
-  rootPage: any = GalleryPage;
+  rootPage: any = LoginPage;
   pages: Array<{ title: string, component: any, icon: string, active: boolean }>;
 
   constructor(
@@ -28,8 +29,8 @@ class MyApp {
     this.pages = [
       { title: 'Blog', component: BlogPage, icon: "logo-wordpress", active: true },
       { title: 'Gallery', component: GalleryPage, icon: "photos", active: false },
-      { title: 'About', component: BlogPage, icon: "information-circle", active: false },
-      { title: 'Contact', component: GalleryPage, icon: "contact", active: false },
+      { title: 'About', component: AboutPage, icon: "information-circle", active: false },
+      { title: 'Contact', component: ContactPage, icon: "contact", active: false },
       { title: 'Logout', component: LoginPage, icon: "exit", active: false }
     ];
   }

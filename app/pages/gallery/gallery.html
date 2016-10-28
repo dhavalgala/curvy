@@ -7,39 +7,13 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-grid>
-        <ion-row>
-            <ion-col width-50 (click)="toDetail(1)">
+    <ion-grid *ngIf="galleries.length>0">
+        <ion-row *ngFor="let item of galleries">
+            <ion-col width-50 (click)="toDetail(gallery.id)" *ngFor="let gallery of item">
                 <div class="image-holder">
-                    <img src="img/food/pizza.jpg" alt="">
+                    <img [src]="gallery.image" alt="">
                     <div class="gallery-type">
-                        <span>Food</span>
-                    </div>
-                </div>
-            </ion-col>
-            <ion-col width-50 (click)="toDetail(2)">
-                <div class="image-holder">
-                    <img src="img/nature/nature1.jpg" alt="">
-                    <div class="gallery-type">
-                        <span>Nature</span>
-                    </div>
-                </div>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col width-50 (click)="toDetail(3)">
-                <div class="image-holder">
-                    <img src="img/travel/travel1.jpg" alt="">
-                    <div class="gallery-type">
-                        <span>Travel</span>
-                    </div>
-                </div>
-            </ion-col>
-            <ion-col width-50 (click)="toDetail(4)">
-                <div class="image-holder">
-                    <img src="img/fashion/fashion3.jpg" alt="">
-                    <div class="gallery-type">
-                        <span>Fashion</span>
+                        <span>{{gallery.name}}</span>
                     </div>
                 </div>
             </ion-col>

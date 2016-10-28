@@ -11,6 +11,13 @@
 @import "../pages/user-profile/user-profile";
 @import "../pages/gallery/gallery";
 @import "../pages/gallery-detail/gallery-detail";
+@import "../pages/about/about";
+@import "../pages/contact/contact";
+
+a {
+    color: $secondary-color;
+}
+
 .menu-toolbar {
   padding: 0;
   .toolbar-background {

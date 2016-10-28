@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {LoadingController, NavController, NavParams} from 'ionic-angular';
-import {DomSanitizationService} from '@angular/platform-browser';
-import {BlogService} from '../../services/blog-service';
+import { Component } from '@angular/core';
+import { LoadingController, NavController, NavParams } from 'ionic-angular';
+import { DomSanitizationService } from '@angular/platform-browser';
+import { BlogService } from '../../services/blog-service';
 
 
 @Component({
@@ -18,23 +18,24 @@ export class BlogDetailsPage {
   }
 
   getBlogDetail(blogId) {
-  	let loadingPopup = this.loadingCtrl.create({
-      content: 'Please Wait...'
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Please Wait...',
+      duration: 10000
     });
 
     // Show the popup
     loadingPopup.present();
     this.blogService.getBlogDetail(blogId).subscribe(
-            data => {
-                this.blogDetail = data;
-                this.blogDetail["title"] = this._sanitizer.bypassSecurityTrustHtml(this.blogDetail["title"]);
-                this.blogDetail["content"] = this._sanitizer.bypassSecurityTrustHtml(this.blogDetail["content"]);
-                console.log(data);
-                loadingPopup.dismiss();
-            },
-            err => {
-                console.log(err);
-            }
-        );
-  	}
+      data => {
+        this.blogDetail = data;
+        this.blogDetail["title"] = this._sanitizer.bypassSecurityTrustHtml(this.blogDetail["title"]);
+        this.blogDetail["content"] = this._sanitizer.bypassSecurityTrustHtml(this.blogDetail["content"].split('style="width: 1230px"').join(''));
+        console.log(data);
+        loadingPopup.dismiss();
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }

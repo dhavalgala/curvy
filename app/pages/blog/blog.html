@@ -1,60 +1,34 @@
 <ion-header>
-    <ion-navbar>
-        <button menuToggle>
+	<ion-navbar>
+		<button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Blog</ion-title>
-    </ion-navbar>
+		<ion-title>Blog</ion-title>
+	</ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-card *ngFor="let blog of latestBlogs;let i=index;">
-        <div class="animated fadeInLeft" *ngIf="i%2==0" (click)="toDetail(blog);">
-            <ion-item>
-                <ion-avatar item-left>
-                    <img src="{{blog.author.avatar_URL}}">
-                </ion-avatar>
-                <h2 class="primary-color">{{blog.author.name}}</h2>
-                <p class="secondary-color">{{blog.date | date:'mediumDate'}}</p>
-            </ion-item>
-            <!-- <img class="blog-image" src="img/appicon.png"> -->
-            <ion-card-content>
-                <span class="blog-title" [innerHTML]="blog.title"></span>
-                <img src="{{blog.featured_image}}" *ngIf="blog.featured_image">
-                <!-- <div [innerHTML]="blog.excerpt"></div> -->
-            </ion-card-content>
-            <ion-row>
-                <ion-col></ion-col>
-                <ion-col></ion-col>
-                <ion-col center text-right>
-                    <ion-note class="secondary-color">
-                        <time-ago [time]="formatToDate(blog.date)"></time-ago>
-                    </ion-note>
-                </ion-col>
-            </ion-row>
-        </div>
-        <div class="animated fadeInRight" *ngIf="i%2!=0" (click)="toDetail(blog);">
-            <ion-item>
-                <ion-avatar item-left>
-                    <img src="{{blog.author.avatar_URL}}">
-                </ion-avatar>
-                <h2 class="primary-color">{{blog.author.name}}</h2>
-                <p class="secondary-color">{{blog.date | date:'mediumDate'}}</p>
-            </ion-item>
-            <!-- <img class="blog-image" src="img/appicon.png"> -->
-            <ion-card-content>
-                <span class="blog-title" [innerHTML]="blog.title"></span>
-                <img src="{{blog.featured_image}}" *ngIf="blog.featured_image">
-                <!-- <div [innerHTML]="blog.excerpt"></div> -->
-            </ion-card-content>
-            <ion-row>
-                <ion-col></ion-col>
-                <ion-col></ion-col>
-                <ion-col center text-right>
-                    <ion-note class="secondary-color">
-                        <time-ago [time]="formatToDate(blog.date)"></time-ago>
-                    </ion-note>
-                </ion-col>
-            </ion-row>
-        </div>
-    </ion-card>
+	<ion-card *ngFor="let blog of latestBlogs;let i=index;" (click)="toDetail(blog);">
+		<ion-item>
+			<ion-avatar item-left>
+				<img src="{{blog.author.avatar_URL}}">
+			</ion-avatar>
+			<h2 class="primary-color">{{blog.author.name}}</h2>
+			<p class="secondary-color">{{blog.date | date:'mediumDate'}}</p>
+		</ion-item>
+		<!-- <img class="blog-image" src="img/appicon.png"> -->
+		<ion-card-content>
+			<span class="blog-title" [innerHTML]="blog.title"></span>
+			<img src="{{blog.featured_image}}" *ngIf="blog.featured_image">
+			<!-- <div [innerHTML]="blog.excerpt"></div> -->
+		</ion-card-content>
+		<ion-row>
+			<ion-col></ion-col>
+			<ion-col></ion-col>
+			<ion-col center text-right>
+				<ion-note class="secondary-color">
+					<time-ago [time]="formatToDate(blog.date)"></time-ago>
+				</ion-note>
+			</ion-col>
+		</ion-row>
+	</ion-card>
 </ion-content>
