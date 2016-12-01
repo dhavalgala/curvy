@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav } from 'ionic-angular';
+// import all the pages in the app
 import {StatusBar} from 'ionic-native';
 import {BlogPage} from './pages/blog/blog';
 import {GalleryPage} from './pages/gallery/gallery';
@@ -15,7 +16,7 @@ import {ContactPage} from './pages/contact/contact';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make BlogPage the root (or first) page
+  // make LoginPage the root (or first) page
   rootPage: any = LoginPage;
   pages: Array<{ title: string, component: any, icon: string, active: boolean }>;
 

@@ -1,5 +1,6 @@
 <ion-menu [content]="content">
 
+  <!--start of semi-circle-->
   <ion-toolbar class="menu-toolbar">
     <div class="avatar-main">
       <div class="avatar">
@@ -11,7 +12,9 @@
       </div>
     </div>
   </ion-toolbar>
+  <!--end of semi-circle-->
 
+  <!--start of menu list-->
   <ion-content>
     <ion-list no-lines inset>
       <button ion-item *ngFor="let p of pages" [ngClass]="{'active':p.active}" (click)="openPage(p)">
@@ -20,6 +23,7 @@
       </button>
     </ion-list>
   </ion-content>
+  <!--end of menu list-->
 
 </ion-menu>
 

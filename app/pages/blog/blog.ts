@@ -18,6 +18,7 @@ export class BlogPage {
     private latestBlogs = [];
 
     getLatestBlogs() {
+        // Instantiate the popup
         let loadingPopup = this.loadingCtrl.create({
             content: 'Please Wait...',
             duration: 10000
@@ -32,6 +33,7 @@ export class BlogPage {
                     this.latestBlogs[i].title = this._sanitizer.bypassSecurityTrustHtml(this.latestBlogs[i].title);
                 }
                 console.log(data);
+                // Dismiss the popup
                 loadingPopup.dismiss();
             },
             err => {
