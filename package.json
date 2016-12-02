@@ -28,8 +28,8 @@
     "tslint-ionic-rules": "0.0.4",
     "run-sequence": "1.1.5"
   },
-  "name": "myionic2project",
-  "description": "MyIonic2Project: An Ionic project",
+  "name": "Halb",
+  "description": "An Ionic 2 template",
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",
