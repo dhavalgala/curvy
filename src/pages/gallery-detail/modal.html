@@ -1,0 +1,10 @@
+<ion-content class="primary-background">
+	<div class="modal-close" (click)="dismiss();">
+		<ion-icon name="md-close"></ion-icon>
+	</div>
+	<ion-slides [initialSlide]="galleryObj?.index" *ngIf="gallery.length>0">
+		<ion-slide *ngFor="let image of gallery">
+			<img [src]="image" class="img-responsive fade-in now" *ngIf="showNow">
+		</ion-slide>
+	</ion-slides>
+</ion-content>

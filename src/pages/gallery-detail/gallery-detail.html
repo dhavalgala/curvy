@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Gallery Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="gallery-detail">
+    <div class="login-curve pic-holder mb0">
+      <div class="gallery-name-holder">
+        <h4 class="gallery-name">{{galleryName}}</h4>
+      </div>
+    </div>
+    <ion-grid *ngIf="galleryImages.length>0;">
+        <ion-row *ngFor="let items of galleryImages;let i=index;">
+            <ion-col col-6 *ngFor="let item of items;let j=index;">
+                <div class="image-holder" (click)="viewInSlide(i,j);">
+                    <img [src]="item" class="img-responsive">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

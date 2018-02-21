@@ -1,6 +1,8 @@
 {
-  "name": "Halb",
-  "app_id": "fe91ed1e",
-  "v2": true,
-  "typescript": true
+  "name": "halb",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

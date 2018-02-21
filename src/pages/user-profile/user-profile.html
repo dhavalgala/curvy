@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="login-toolbar">
+    <div class="login-curve pic-holder">
+    <img class="profile-pic" src="{{userDetails.profilePic}}" alt="">
+    </div>
+  </div>
+
+	<ion-list no-lines class="signup-form">
+
+	  <ion-item class="custom-input">
+	    <ion-label floating>First Name</ion-label>
+	    <ion-input type="text" [(ngModel)]="userDetails.firstName"></ion-input>
+	  </ion-item>
+
+	  <ion-item class="custom-input">
+	    <ion-label floating>Last Name</ion-label>
+	    <ion-input type="text" [(ngModel)]="userDetails.lastName"></ion-input>
+	  </ion-item>
+
+	  <ion-item class="custom-input">
+	    <ion-label floating>Username</ion-label>
+	    <ion-input type="email" [(ngModel)]="userDetails.username"></ion-input>
+	  </ion-item>
+
+	  <div class="pd10">
+		  <button ion-button full class="primary-background" (click)="toBlog()">
+		  	Update
+		  </button>
+	  </div>
+
+	</ion-list>
+</ion-content>

@@ -1,0 +1,34 @@
+.login-curve {
+    .custom-btn {
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        box-shadow: none;
+        z-index: 2;
+        font-size: 2rem;
+        padding: 13px;
+        margin: 2px 0;
+        background-color: $secondary-color;
+        color: $primary-color;
+    }
+    .custom-btn:hover {
+        background-color: $secondary-color;
+    }
+    .toolbar-title {
+        text-align: center;
+        margin-top: 25px;
+        color: #424242;
+    }
+}
+
+.custom-header::after {
+    background: none;
+}
+
+.about-content {
+    margin: 10px;
+    h4,
+    p {
+        text-align: justify;
+    }
+}
