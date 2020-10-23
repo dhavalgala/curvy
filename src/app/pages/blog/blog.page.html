@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="secondary">Blog</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let blog of latestBlogs;let i=index;" (click)="toDetail(blog);">
+    <ion-item lines="full">
+      <ion-avatar slot="start">
+        <img src="{{blog.author.avatar_URL}}">
+      </ion-avatar>
+      <ion-label>
+        <h2 class=" author-name primary-color">{{blog.author.name}}</h2>
+        <p class="secondary-color">{{blog.date | date:'mediumDate'}}</p>
+      </ion-label>
+    </ion-item>
+    <!-- <img class="blog-image" src="../assets/imgs/appicon.png"> -->
+    <ion-card-content>
+      <span class="blog-title" [innerHTML]="blog.title"></span>
+      <img src="{{blog.featured_image}}" *ngIf="blog.featured_image">
+      <!-- <div [innerHTML]="blog.excerpt"></div> -->
+    </ion-card-content>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col class="text-right">
+        <ion-note class="secondary-color">
+          <app-timeago [time]="formatToDate(blog.date)"></app-timeago>
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

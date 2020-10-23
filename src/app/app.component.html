@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+
+      <!--start of semi-circle-->
+      <ion-toolbar class="menu-toolbar">
+        <div class="avatar-main">
+          <div class="avatar">
+            <img src="../assets/imgs/mcfly.jpg">
+          </div>
+          <div class="avatar-info">
+            <h5>Marty McFly</h5>
+            <p (click)="toProfile();">View Profile</p>
+          </div>
+        </div>
+      </ion-toolbar>
+      <!--end of semi-circle-->
+
+      <ion-content>
+        <ion-list class="menu-list">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item (click)="selectedIndex = i" [routerLink]="[p.url]" lines="none"
+              detail="false" [class.active]="selectedIndex == i">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

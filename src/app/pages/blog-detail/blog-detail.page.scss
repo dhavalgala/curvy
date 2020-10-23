@@ -1,0 +1,93 @@
+.login-curve {
+  position: relative;
+}
+
+ion-card {
+  margin: 1em;
+  color: var(--ion-color-primary);
+  ion-card-content {
+    img {
+      margin: 5px;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.blog-detail {
+  .mb0 {
+    margin-bottom: 0;
+  }
+  .author-detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .author-pic {
+      max-height: 80px;
+      border: 2px solid var(--ion-color-primary-contrast);
+      border-radius: 100%;
+    }
+    .author-name {
+      margin: 2px 0;
+    }
+  }
+  .blog-date {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 1em;
+    color: var(--ion-color-secondary);
+  }
+  .blog-detail-title {
+    padding: 0 10px;
+    span {
+      font-size: 1.2em;
+    }
+  }
+  .pd0 {
+    padding: 5px 0;
+  }
+  .blog-desc {
+    padding: 0 10px;
+    p {
+      font-size: 1em;
+      text-align: justify;
+      margin: 10px 5px;
+    }
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

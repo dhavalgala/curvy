@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="login-toolbar">
+    <div class="login-curve">
+      <ion-title>Login</ion-title>
+    </div>
+  </div>
+
+  <ion-list no-lines class="login-form">
+
+    <ion-item class="custom-input">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50></ion-col>
+        <ion-col class="text-right" width-50><a class="forgot" (click)="toForgotPassword()">Forgot Password?</a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="pd10">
+      <ion-button class="btn-common" expand="full" color="primary" (click)="toBlog()">
+        Login
+      </ion-button>
+    </div>
+    <p class="sign-up" (click)="toSignUp();">Don't have an account? <a>Sign Up</a></p>
+
+  </ion-list>
+</ion-content>

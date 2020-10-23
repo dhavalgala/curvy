@@ -1,63 +1,80 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Platform, MenuController, Nav } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { Component, OnInit } from '@angular/core';
 
-import { BlogPage } from '../pages/blog/blog';
-import { GalleryPage } from '../pages/gallery/gallery';
-import { LoginPage } from '../pages/login/login';
-import { UserProfilePage } from '../pages/user-profile/user-profile';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { MenuController, Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  templateUrl: 'app.html'
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
-export class MyApp implements OnInit {
+export class AppComponent implements OnInit {
+  public selectedIndex = 0;
+  public appPages = [
+    {
+      title: 'Blog',
+      url: '/blog',
+      icon: 'logo-wordpress'
+    },
+    {
+      title: 'Gallery',
+      url: '/gallery',
+      icon: 'images'
+    },
+    {
+      title: 'About',
+      url: '/about',
+      icon: 'information-circle'
+    },
+    {
+      title: 'Contact',
+      url: '/contact',
+      icon: 'person-circle'
+    },
+    {
+      title: 'Logout',
+      url: '/login',
+      icon: 'exit'
+    }
+  ];
 
-  @ViewChild(Nav) nav: Nav;
-  rootPage: any = LoginPage;
-  pages: Array<{ title: string, component: any, icon: string, active: boolean }>;
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private router: Router,
+    private menuController: MenuController
+  ) {
+    this.initializeApp();
+  }
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menu: MenuController) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 
   ngOnInit() {
-    // set our app's pages
-    this.pages = [
-      { title: 'Blog', component: BlogPage, icon: "logo-wordpress", active: true },
-      { title: 'Gallery', component: GalleryPage, icon: "photos", active: false },
-      { title: 'About', component: AboutPage, icon: "information-circle", active: false },
-      { title: 'Contact', component: ContactPage, icon: "contact", active: false },
-      { title: 'Logout', component: LoginPage, icon: "exit", active: false }
-    ];
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.setActiveItem();
+      }
+    });
   }
 
-  openPage(page) {
-
-    for (let i = 0; i < this.pages.length; i++) {
-      if (page.title == this.pages[i].title) {
-        this.pages[i].active = true;
-      } else {
-        this.pages[i].active = false;
-      }
+  async setActiveItem() {
+    const path = window.location.pathname.split('/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    await this.menuController.close();
   }
 
   toProfile() {
-    this.menu.close();
-    this.nav.push(UserProfilePage);
+    const path = window.location.pathname.split('/')[1];
+    this.router.navigateByUrl(`/profile/${path}`);
   }
-
 }
-

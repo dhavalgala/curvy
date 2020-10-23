@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary" defaultHref="{{backTo}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="login-toolbar">
+    <div class="login-curve pic-holder">
+      <img class="profile-pic" src="{{userDetails.profilePic}}" alt="Profile picture">
+    </div>
+  </div>
+  <ion-list no-lines class="signup-form">
+
+    <ion-item class="custom-input">
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="userDetails.firstName"></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="userDetails.lastName"></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="email" [(ngModel)]="userDetails.username"></ion-input>
+    </ion-item>
+
+    <div class="pd10">
+      <ion-button class="btn-common" expand="full" color="primary" (click)="goBack()">
+        Update
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content>

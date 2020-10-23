@@ -1,0 +1,23 @@
+ion-slides {
+  height: 100%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 1.6em;
+  color: var(--ion-color-secondary);
+  z-index: 2;
+}
+
+.swiper-pagination-bullet {
+  background: var(--ion-color-primary-contrast);
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--ion-color-secondary);
+  opacity: 1;
+}
